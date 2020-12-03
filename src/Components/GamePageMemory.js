@@ -6,7 +6,8 @@ const notesUrl = 'http://localhost:7001/notes'
 class GamePageMemory extends Component {
 
   state = {
-    notes: []
+    notes: [],
+    flipped: false,
   }
 
   componentDidMount(){
@@ -18,10 +19,12 @@ class GamePageMemory extends Component {
   }
   
   render(){
+    const {notes, flipped} = this.state;
+    
     return (
       <div className='GamePageMemory'>
         <h1>I'm the Game Page!</h1>
-        <NotesContainer notes={this.state.notes} />
+        <NotesContainer notes={notes} flipped={flipped}/>
       </div>
     );
   }

@@ -6,10 +6,11 @@ const NotesContainer = (props) => {
   const notes = props.notes
 
   return (
-    <div>
-      {
-        notes.map(note => {
-          <Note note={note} key={note.id}/>
+    <div className="notes-container">
+      {notes
+        .sort(() => Math.random() - 0.5)
+        .map(note => {
+          return <Note note={note} key={note.id}/>
         })
       }
     </div>

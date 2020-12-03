@@ -4,8 +4,11 @@ const Note = (props) => {
 
   const note = props.note
   return (
-    <div>
-      <img src={note.image} alt={note.name} />
+    <div className="note-card">
+      <img 
+        className="note-image image-blank" 
+        src={note.image} 
+        alt={note.name} />
     </div>
   );
 }
