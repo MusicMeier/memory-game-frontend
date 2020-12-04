@@ -1,33 +1,34 @@
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 import NotesContainer from './NotesContainer'
 
 const notesUrl = 'http://localhost:7001/notes'
 
-class GamePageMemory extends Component {
+function GamePageMemory() {
 
-  state = {
-    notes: [],
-    flipped: false,
-  }
+  const [ notes, setNotes ] = useState([])
+  const [ stack, setStack ] = useState([])
+  const [ matched, setMatched ] = useState([])
 
-  componentDidMount(){
+  useEffect(() => {
     fetch(notesUrl)
       .then(response => response.json())
-      .then(notes => {
-        this.setState({notes: notes})
-      })
-  }
-  
-  render(){
-    const {notes, flipped} = this.state;
-    
+      .then((notes) => setNotes(
+        notes.sort(() => Math.random() - 0.5)
+      ))
+  }, [])
+
     return (
       <div className='GamePageMemory'>
         <h1>I'm the Game Page!</h1>
-        <NotesContainer notes={notes} flipped={flipped}/>
+        <NotesContainer 
+          notes={notes}
+          stack={stack}  
+          setStack={setStack}  
+          matched={matched}
+          setMatched={setMatched}
+        />
       </div>
     );
-  }
 }
 
 export default GamePageMemory;
