@@ -17,6 +17,12 @@
   overflow: hidden;
 }
 
+.matched-card {
+  animation-timing-function: 1s;
+  opacity: 0;
+  /* position: absolute; */
+}
+
 .note-card-inner {
   position: relative;
   width: 100%;
