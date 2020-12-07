@@ -20,11 +20,13 @@ function GamePageMemory() {
     return (
       <div className='GamePageMemory'>
         <h1>I'm the Game Page!</h1>
+        <p>Score: {matched.length}</p>
         <NotesContainer 
           notes={notes}
           stack={stack}  
           setStack={setStack}  
           matched={matched}
+          setNotes={setNotes}
           setMatched={setMatched}
         />
       </div>

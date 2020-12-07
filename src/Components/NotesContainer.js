@@ -2,7 +2,7 @@ import React from 'react';
 import Note from './Note'
 
 const NotesContainer = (props) => {
-  const { notes, stack, matched, setStack, setMatched } = props
+  const { notes, stack, matched, setStack, setMatched, setNotes} = props
 
 
   return (
@@ -17,6 +17,7 @@ const NotesContainer = (props) => {
             matched={matched}
             setStack={setStack}
             setMatched={setMatched}
+            setNotes={setNotes}
           />
         })
       }
