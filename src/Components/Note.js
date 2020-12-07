@@ -8,8 +8,14 @@ const Note = (props) => {
     transform: `persective(600px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80}
   })
-
+  
   const { note, stack, matched, setStack, setMatched } = props
+
+  useEffect(() => {
+    if(matched.length > 0) {
+      setFlipped("")
+    }
+  }, [matched])
 
   useEffect(() => {
     if(stack.includes(note)){
@@ -29,11 +35,12 @@ const Note = (props) => {
         if (stack[0].name === note.name) {
           console.log("hi dudes")
           setMatched([...matched, stack[0], note])
+          
         } else {
           console.log("pick Me")
           setTimeout(() => {
             setStack([])
-          }, 2000)
+          }, 1000)
         }
     } 
   }
