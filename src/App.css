@@ -18,9 +18,7 @@
 }
 
 .matched-card {
-  
   opacity: 0;
-  transition: opacity 5s ease-in;
   /* position: absolute; */
 }
 
