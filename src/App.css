@@ -18,7 +18,6 @@
 }
 
 .matched-card {
-  animation-timing-function: 1s;
   opacity: 0;
   /* position: absolute; */
 }
