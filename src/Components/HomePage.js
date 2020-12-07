@@ -1,12 +1,14 @@
 import React from 'react';
-import GamePageMemory from './GamePageMemory'
-import GamePageRecordings from './GamePageRecordings'
+import { Link } from 'react-router-dom'
+// import {Route, Switch} from 'react-router-dom'
 
 const HomePage = () => {
   return (
     <div>
-      <GamePageMemory />
-      <GamePageRecordings />
+      <h1>I am the Homepage</h1>
+      <Link to="/GamePageMemory">
+        <button>Start Game</button>
+      </Link>
     </div>
   );
 }

@@ -2,15 +2,23 @@ import React from 'react';
 import Note from './Note'
 
 const NotesContainer = (props) => {
+  const { notes, stack, matched, setStack, setMatched, setNotes} = props
 
-  const notes = props.notes
 
   return (
     <div className="notes-container">
       {notes
-        .sort(() => Math.random() - 0.5)
         .map(note => {
-          return <Note note={note} key={note.id}/>
+          return <Note 
+            note={note} 
+            notes={notes}
+            key={note.id} 
+            stack={stack}
+            matched={matched}
+            setStack={setStack}
+            setMatched={setMatched}
+            setNotes={setNotes}
+          />
         })
       }
     </div>
