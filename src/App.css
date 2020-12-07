@@ -1,18 +1,52 @@
 .notes-container {
+  /* width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; */
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
-  grid-gap: 10px;
+  grid-template-columns: auto auto auto auto auto;
+  grid-column-gap: 10px;
+  justify-items: center;
 }
 
 .note-card {
-  display: inline-block;
-  justify-content: space-evenly;
-  width: 100%;
-  height: auto;
-  border: 1px solid black;
+
+  width: 250px;
+  height: 300px;
+  margin: 10px;
+  overflow: hidden;
 }
 
-.note-card img {
+.matched-card {
+  
+  opacity: 0;
+  transition: opacity 5s ease-in;
+  /* position: absolute; */
+}
+
+.note-card-inner {
+  position: relative;
   width: 100%;
   height: 100%;
 }
+
+.note-card img {
+  /* object-fit: contain; */
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+}
+
+.back, .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* .image-front {
+  object-fit: c;
+} */
