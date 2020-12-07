@@ -11,13 +11,11 @@ const NotesContainer = (props) => {
         .map(note => {
           return <Note 
             note={note} 
-            notes={notes}
             key={note.id} 
             stack={stack}
             matched={matched}
             setStack={setStack}
             setMatched={setMatched}
-            setNotes={setNotes}
           />
         })
       }

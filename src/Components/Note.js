@@ -3,40 +3,22 @@ import { useSpring, animated as a } from 'react-spring';
 
 const Note = (props) => {
   const [flipped, setFlipped] = useState(false)
+  const [isMatched, setIsMatched] = useState(false)
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `persective(600px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80}
   })
   
-  const { note, notes, stack, matched, setStack, setMatched, setNotes } = props
+  const { note, stack, matched, setStack, setMatched } = props
 
-  useEffect(() => {
-    // let updatedNotes = notes.map(note => {
-    //   if(matched.find(matchedNote => matchedNote.name === note.name)) {
-    //     return {
-    //       id: note.id,
-    //       name: note.name,
-    //       image: note.image,
-    //       matched: true
-    //     }
-    //   } else {
-    //     return note
-    //   }
-    // })
-    // setNotes(updatedNotes)
-    // if (note.matched === true) {
-    //   setFlipped(true)
-    //     if(flipped(true)){
-    //       className = "matched-card"
-    //     }
-    // }
-    // setStack([])
-    
-    setTimeout(() => {
-      setStack([])
+  useEffect( () => {
+    if( matched.includes(note) ){
+        setTimeout(() => {
+            setIsMatched( true )
     }, 1000)
-  }, [matched])
+    }
+}, [ matched ])
 
   useEffect(() => {
     
@@ -73,7 +55,7 @@ const Note = (props) => {
   return (
     <div 
       onClick={onCardClick}
-      className={(matched.includes(note)) ? "matched-card" : "note-card"}
+      className={isMatched ? "matched-card" : "note-card"}
     >
       <div className="note-card-inner">
         <a.div 

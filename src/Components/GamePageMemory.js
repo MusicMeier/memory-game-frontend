@@ -26,7 +26,6 @@ function GamePageMemory() {
           stack={stack}  
           setStack={setStack}  
           matched={matched}
-          setNotes={setNotes}
           setMatched={setMatched}
         />
       </div>
