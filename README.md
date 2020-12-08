@@ -16,6 +16,8 @@ Throughout my teaching career, I have created many games for my piano students. 
 
 <h2>Intro Video</h2>
 
+<h2>Technologies</h2>
+
 <ul>
  <li>Node: version 2.6.5</li>
  <li>body-parser: 1.19.0</li>
@@ -55,3 +57,68 @@ Then you should: <code>npm start</code><br><br>
 You are now ready to start using the first iteration of Note-Set-Match!<br>
 
 <i>*Please note that some features are still a work in progress.</i>
+
+<h2>Instructions</h2>
+<ol>
+ <li>Sign up!</li>
+ <li>Or if you prefer to stay anonymous, hit the 'Start Game' button to begin.</li>
+ <li>Once you're on the game page, click on the cards and start your journey.</li>
+ <li>Once you've completed the game, you may play again or simply exit.</li>
+</ol>
+
+<h2>Code Example</h2>
+
+<h4>useEffect basted on the state of matched:</h4>
+
+
+```  useEffect( () => {
+    if( matched.includes(note) ){
+        setTimeout(() => {
+            setIsMatched( true )
+              if(matched.length === notes.length) {
+                setIsShowing(!isShowing)
+              }
+    }, 1000)
+  }
+}, [ matched ])
+```
+
+<h4>onClick with flipping logic:</h4>
+
+```
+const onCardClick = () => {
+
+    if(stack.length === 0){
+      setFlipped(!flipped)
+      setStack([note])
+    } else if (stack.length < 2) {
+      setFlipped(!flipped)
+      setStack([...stack, note])
+        if (stack[0].name === note.name) {
+          setMatched([...matched, stack[0], note])
+          setTimeout(() => {
+            setStack([])
+          }, 1000)
+        } else {
+          setTimeout(() => {
+            setStack([])
+          }, 1000)
+        }
+    } 
+  }
+  ```
+  
+<h2>App Preview</h2>
+<img src="https://i.imgur.com/EwECzcR.png" border="0" width="1050" height="auto"/><br>
+<img src="https://i.imgur.com/ccjV6bw.png" border="0" width="350" height="auto"/><br>
+<img src="https://i.imgur.com/IE5TRht.png" border="0" width="350" height="auto"/><br>
+
+<h2>Status</h2>
+
+We're looking forward to rolling-out the following features:
+<li>Create a user login workflow.</li>
+<li>different levels: beginner, intermediate, and advanced</li>
+<li>also an option to practice musical terminology</li>
+
+ <h2>Contact</h2>
+<a href="https://www.linkedin.com/in/musicmeier/"><img src="https://user-images.githubusercontent.com/68958970/97038321-a07f9600-1538-11eb-90f4-baa2d81a0664.png" alt="Music Meier" style="width:10px;height:10px;"></a>Music Meier :musical_score:<br>
