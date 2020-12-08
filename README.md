@@ -70,14 +70,14 @@ You are now ready to start using the first iteration of Note-Set-Match!<br>
 
 <h4>useEffect basted on the state of matched:</h4>
 
-
-```  useEffect( () => {
-    if( matched.includes(note) ){
-        setTimeout(() => {
-            setIsMatched( true )
-              if(matched.length === notes.length) {
-                setIsShowing(!isShowing)
-              }
+```  
+useEffect( () => {
+  if( matched.includes(note) ){
+    setTimeout(() => {
+      setIsMatched( true )
+        if(matched.length === notes.length) {
+          setIsShowing(!isShowing)
+        }
     }, 1000)
   }
 }, [ matched ])
@@ -87,31 +87,30 @@ You are now ready to start using the first iteration of Note-Set-Match!<br>
 
 ```
 const onCardClick = () => {
-
-    if(stack.length === 0){
-      setFlipped(!flipped)
-      setStack([note])
-    } else if (stack.length < 2) {
-      setFlipped(!flipped)
-      setStack([...stack, note])
-        if (stack[0].name === note.name) {
-          setMatched([...matched, stack[0], note])
-          setTimeout(() => {
-            setStack([])
-          }, 1000)
-        } else {
-          setTimeout(() => {
-            setStack([])
-          }, 1000)
-        }
+  if(stack.length === 0){
+    setFlipped(!flipped)
+    setStack([note])
+  } else if (stack.length < 2) {
+    setFlipped(!flipped)
+    setStack([...stack, note])
+      if (stack[0].name === note.name) {
+        setMatched([...matched, stack[0], note])
+        setTimeout(() => {
+          setStack([])
+        }, 1000)
+      } else {
+        setTimeout(() => {
+          setStack([])
+        }, 1000)
+      }
     } 
   }
   ```
   
 <h2>App Preview</h2>
-<img src="https://i.imgur.com/EwECzcR.png" border="0" width="1050" height="auto"/><br>
-<img src="https://i.imgur.com/ccjV6bw.png" border="0" width="350" height="auto"/><br>
-<img src="https://i.imgur.com/IE5TRht.png" border="0" width="350" height="auto"/><br>
+<img src="https://i.imgur.com/EwECzcR.png" border="0" width="300" height="auto"/><br>
+<img src="https://i.imgur.com/ccjV6bw.png" border="0" width="300" height="auto"/><br>
+<img src="https://i.imgur.com/IE5TRht.png" border="0" width="300" height="auto"/><br>
 
 <h2>Status</h2>
 
