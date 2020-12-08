@@ -116,8 +116,8 @@ const onCardClick = () => {
 
 We're looking forward to rolling-out the following features:
 <li>Create a user login workflow.</li>
-<li>different levels: beginner, intermediate, and advanced</li>
-<li>also an option to practice musical terminology</li>
+<li>Levels: beginner, intermediate, and advanced</li>
+<li>Options to practice musical terminology</li>
 
  <h2>Contact</h2>
 <a href="https://www.linkedin.com/in/musicmeier/"><img src="https://user-images.githubusercontent.com/68958970/97038321-a07f9600-1538-11eb-90f4-baa2d81a0664.png" alt="Music Meier" style="width:10px;height:10px;"></a>Music Meier :musical_score:<br>
