@@ -1,20 +1,129 @@
-.notes-container {
-  /* width: 90%;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Meyer reset */
+
+.HomePage {
+  /* background-image: url(https://static5.depositphotos.com/1039762/473/i/950/depositphotos_4735145-stock-photo-old-style-music-background.jpg); */
+  background-image: url(https://st.depositphotos.com/1888461/1580/i/600/depositphotos_15807759-stock-photo-music-background-vintage-piano-design.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 835px;
+  margin: 0;
   display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px;
+  box-shadow: 0 0 15px -6px rgb(34, 33, 33);
+  margin: 50px auto;
+  border-radius: 8px;
+}
+
+.signup-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.button-div {
+margin: 0 auto;
+}
+
+form input {
+  margin: 10px;
+}
+
+.GamePageMemory {
+  background-image: url(https://st.depositphotos.com/1888461/1580/i/600/depositphotos_15807759-stock-photo-music-background-vintage-piano-design.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 835px;
+  margin: 0;
+}
+
+.title-gamepage {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  color: rgb(241, 204, 102);
+  text-shadow: 3px 4px 5px black;
+  font-size: 30px;
+}
+
+.score {
+  font-size: 20px;
+  text-align: center;
+  color: rgb(241, 204, 102);
+  text-shadow: 3px 4px 5px black;
+}
+
+.notes-container {
+  width: 1250px;
+  /* display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly; */
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
   grid-column-gap: 10px;
   justify-items: center;
+  height: 90%;
+  margin: auto;
+  overflow: hidden;
 }
 
 .note-card {
 
-  width: 250px;
-  height: 300px;
+  width: 175px;
+  height: 200px;
   margin: 10px;
   overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 .matched-card {
@@ -28,8 +137,11 @@
   height: 100%;
 }
 
+/* .image-front {
+  background: rgb(134, 102, 20);
+} */
+
 .note-card img {
-  /* object-fit: contain; */
   width: 100%;
   height: 100%;
 }
@@ -43,8 +155,72 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  /* background-color: goldenrod; */
 }
 
 /* .image-front {
   object-fit: c;
 } */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: .5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.modal {
+  z-index: 100;
+  background: white;
+  position: relative;
+  margin: 1.75rem auto;
+  border-radius: 3px;
+  max-width: 500px;
+  padding: 2rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-close-button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  opacity: .3;
+  cursor: pointer;
+  border: none;
+}
+
+button {
+  font-size: .9rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 3px;
+  padding: .3rem 1rem;
+  margin-left: .5rem;
+  box-shadow: 0 0 15px -6px rgb(34, 33, 33);
+}
+
+.button-default {
+  background: #247BA0;
+  color: #fff;
+}

@@ -1,16 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-// import {Route, Switch} from 'react-router-dom'
+import SignUp from './SignUp';
 
-const HomePage = () => {
+class HomePage extends Component {
+  state = {
+    user: {}
+  }
+
+  saveUser = user => {
+    fetch("http://localhost:7001/users", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user: {
+            username: user.username,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            password: user.password
+          }
+        }),
+      })
+      .then(response => response.json())
+      .then(user => this.setState({user}))
+  }
+render(){
   return (
-    <div>
-      <h1>I am the Homepage</h1>
-      <Link to="/GamePageMemory">
-        <button>Start Game</button>
-      </Link>
+    <div className="HomePage">
+      <div>
+        {console.log(this.state.user.username)
+          ? <h2>Welcome! {this.state.user.firstName}</h2>
+          : <SignUp saveUser={this.saveUser}/>
+        }
+      </div>
+      <div className="button-div">
+        <Link to="/GamePageMemory">
+          <button className="game-button">Start Game</button>
+        </Link>
+      </div>
     </div>
-  );
+    );
+  }
 }
 
 export default HomePage;

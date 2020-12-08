@@ -10,14 +10,17 @@ const Note = (props) => {
     config: { mass: 5, tension: 500, friction: 80}
   })
   
-  const { note, stack, matched, setStack, setMatched } = props
+  const { notes, note, stack, matched, setStack, setMatched, isShowing, setIsShowing } = props
 
   useEffect( () => {
     if( matched.includes(note) ){
         setTimeout(() => {
             setIsMatched( true )
+              if(matched.length === notes.length) {
+                setIsShowing(!isShowing)
+              }
     }, 1000)
-    }
+  }
 }, [ matched ])
 
   useEffect(() => {
@@ -30,7 +33,7 @@ const Note = (props) => {
   }, [stack])
 
   const onCardClick = () => {
-  
+
     if(stack.length === 0){
       setFlipped(!flipped)
       setStack([note])
@@ -38,13 +41,11 @@ const Note = (props) => {
       setFlipped(!flipped)
       setStack([...stack, note])
         if (stack[0].name === note.name) {
-          console.log("hi dudes")
           setMatched([...matched, stack[0], note])
           setTimeout(() => {
             setStack([])
           }, 1000)
         } else {
-          console.log("pick Me")
           setTimeout(() => {
             setStack([])
           }, 1000)
@@ -53,6 +54,7 @@ const Note = (props) => {
   }
 
   return (
+    <>
     <div 
       onClick={onCardClick}
       className={isMatched ? "matched-card" : "note-card"}
@@ -64,7 +66,7 @@ const Note = (props) => {
         >
           <img 
             className="image-front"
-            src={'https://i.pinimg.com/750x/b0/46/59/b04659618d292e195b7c39a92de0845a.jpg'} 
+            src={'https://i.pinimg.com/originals/93/b9/ab/93b9ab489700a6893306fe0fc1e162ab.jpg'} 
             alt={note.name} 
           />
         </a.div>
@@ -80,6 +82,7 @@ const Note = (props) => {
         </a.div>
       </div>
     </div>
+    </>
   );
 }
 
