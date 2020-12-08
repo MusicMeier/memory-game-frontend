@@ -24,13 +24,14 @@ class HomePage extends Component {
         }),
       })
       .then(response => response.json())
-      .then(user => this.setState({user}))
+      .then(({user}) => this.setState({user}))
   }
 render(){
+  console.log(this.state)
   return (
     <div className="HomePage">
       <div>
-        {console.log(this.state.user.username)
+        {this.state.user.username
           ? <h2>Welcome! {this.state.user.firstName}</h2>
           : <SignUp saveUser={this.saveUser}/>
         }
