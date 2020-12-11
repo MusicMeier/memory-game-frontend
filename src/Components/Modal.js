@@ -30,16 +30,19 @@ const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
     <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
       <div className="modal">
         <div className="modal-header">
-          <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
+          {/* <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
             <span aria-hidden="true">&times;</span>
-          </button>
+          </button> */}
         </div>
-        <h4>
-          Congratulations! Your memory works! 🎉
+        <h4 className="modal-message">
+          Congratulations! <br></br>
+          Your memory works! 🎉
         </h4>
+        <div className="modal-button-1">
         <Link to="/">
-          <button classname="button-default">Go Home!</button>
+          <button className="button-default">Go Home!</button>
         </Link>
+        </div>
       </div>
     </div>
   </React.Fragment>, document.body

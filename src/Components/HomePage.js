@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import SignUp from './SignUp';
 
 class HomePage extends Component {
@@ -32,7 +32,7 @@ render(){
     <div className="HomePage">
       <div>
         {this.state.user.username
-          ? <h2>Welcome! {this.state.user.firstName}</h2>
+          ? <Redirect to="/GamePageMemory" />
           : <SignUp saveUser={this.saveUser}/>
         }
       </div>
