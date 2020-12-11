@@ -19,7 +19,7 @@ class SignUp extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.saveUser(this.state)
-    // return <Redirect to="GamePageMemory" />
+
   }
 
   render(){

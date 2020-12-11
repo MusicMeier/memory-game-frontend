@@ -24,7 +24,7 @@ function GamePageMemory() {
     return (
       <>
       <div className='GamePageMemory'>
-        <h1 className="title-gamepage">I'm the Game Page!</h1>
+        <h1 className="title-gamepage">Note-Set-Match</h1>
         <p className="score"><strong>Score: {matched.length / 2 * 100}</strong></p>
         <NotesContainer 
           className="notes-container"

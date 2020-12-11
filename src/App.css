@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,6 +55,7 @@ table {
   margin: 0;
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
 }
 
 form {
@@ -63,11 +66,13 @@ form {
   box-shadow: 0 0 15px -6px rgb(34, 33, 33);
   margin: 50px auto;
   border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .signup-title {
   font-size: 30px;
   margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .button-div {
@@ -76,6 +81,7 @@ margin: 0 auto;
 
 form input {
   margin: 10px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .GamePageMemory {
@@ -84,6 +90,7 @@ form input {
   background-repeat: no-repeat;
   height: 835px;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .title-gamepage {
@@ -93,6 +100,7 @@ form input {
   color: rgb(241, 204, 102);
   text-shadow: 3px 4px 5px black;
   font-size: 30px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .score {
@@ -100,6 +108,7 @@ form input {
   text-align: center;
   color: rgb(241, 204, 102);
   text-shadow: 3px 4px 5px black;
+  font-family: 'Roboto', sans-serif;
 }
 
 .notes-container {
@@ -117,7 +126,6 @@ form input {
 }
 
 .note-card {
-
   width: 175px;
   height: 200px;
   margin: 10px;
@@ -171,11 +179,13 @@ form input {
   height: 100vh;
   background-color: #000;
   opacity: .5;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  
 }
 
 .modal-wrapper {
   position: fixed;
-  top: 0;
+  top: 35%;
   left: 0;
   z-index: 1050;
   width: 100%;
@@ -190,17 +200,36 @@ form input {
   background: white;
   position: relative;
   margin: 1.75rem auto;
-  border-radius: 3px;
+  border-radius: 10px;
   max-width: 500px;
   padding: 2rem;
 }
 
 .modal-header {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  text-align: center;
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
 }
 
-.modal-close-button {
+.modal-message {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.modal-button-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* .modal-close-button {
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 1;
@@ -208,7 +237,7 @@ form input {
   opacity: .3;
   cursor: pointer;
   border: none;
-}
+} */
 
 button {
   font-size: .9rem;
@@ -216,8 +245,9 @@ button {
   border: none;
   border-radius: 3px;
   padding: .3rem 1rem;
-  margin-left: .5rem;
+  margin: auto;
   box-shadow: 0 0 15px -6px rgb(34, 33, 33);
+  font-family: 'Roboto', sans-serif;
 }
 
 .button-default {
