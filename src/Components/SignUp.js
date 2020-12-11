@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 
 class SignUp extends Component {
 
@@ -18,6 +19,10 @@ class SignUp extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.saveUser(this.state)
+<<<<<<< HEAD
+=======
+    // return <Redirect to="GamePageMemory" />
+>>>>>>> 7b9845b7c2d73a1bdf6faceba8371bfa530ceb44
   }
 
   render(){
