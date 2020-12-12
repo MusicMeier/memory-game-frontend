@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom'
 
 class SignUp extends Component {
 
@@ -18,6 +19,7 @@ class SignUp extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.saveUser(this.state)
+
   }
 
   render(){
