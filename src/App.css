@@ -75,6 +75,12 @@ form {
   font-family: 'Roboto', sans-serif;
 }
 
+.login-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
 .button-div {
 margin: 0 auto;
 }
