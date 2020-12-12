@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import SignUp from './SignUp';
+import Login from './Login';
 
 class HomePage extends Component {
   state = {
@@ -33,7 +34,12 @@ render(){
       <div>
         {this.state.user.username
           ? <Redirect to="/GamePageMemory" />
-          : <SignUp saveUser={this.saveUser}/>
+          : (
+            <>
+              <SignUp saveUser={this.saveUser}/>
+              <Login />
+            </>
+          )
         }
       </div>
       <div className="button-div">
