@@ -8,9 +8,13 @@ const Login = () => {
   const handleUsernameChange = event => setUsername(event.target.value)
   const handlePasswordChange = event => setPassword(event.target.value)
 
+  const handleSubmit = event => {
+    event.preventDefault()
+  }
+
   return (
     <div> 
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1 className="login-title">Login</h1>
         <label>Username</label>
         <input name="username" value={username} onChange={handleUsernameChange}/>

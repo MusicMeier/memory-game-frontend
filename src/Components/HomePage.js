@@ -27,6 +27,7 @@ class HomePage extends Component {
       .then(response => response.json())
       .then(({user}) => this.setState({user}))
   }
+
 render(){
   console.log(this.state)
   return (
