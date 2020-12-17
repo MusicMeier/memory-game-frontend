@@ -108,6 +108,7 @@ const onCardClick = () => {
   ```
   
 <h2>App Preview</h2>
+<iframe src="https://giphy.com/embed/BNthGzlbbZ8HSZIDHg" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/BNthGzlbbZ8HSZIDHg">via GIPHY</a></p>
 <img src="https://i.imgur.com/EwECzcR.png" border="0" width="300" height="auto"/><br>
 <img src="https://i.imgur.com/ccjV6bw.png" border="0" width="300" height="auto"/><br>
 <img src="https://i.imgur.com/IE5TRht.png" border="0" width="300" height="auto"/><br>
