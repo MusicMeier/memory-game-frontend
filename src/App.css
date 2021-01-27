@@ -51,9 +51,10 @@ table {
   background-image: url(https://st.depositphotos.com/1888461/1580/i/600/depositphotos_15807759-stock-photo-music-background-vintage-piano-design.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 835px;
+  height: 100vh;
   margin: 0;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
 }
@@ -63,22 +64,47 @@ form {
   flex-direction: column;
   width: 400px;
   padding: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   box-shadow: 0 0 15px -6px rgb(34, 33, 33);
   margin: 50px auto;
   border-radius: 8px;
+  color: #382d16;
   font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+form input > .form-button{
+  background-color: pink;
+}
+
+.change-page-sentence {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.homepage-title {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 10px;
+  color: #382d16;
 }
 
 .signup-title {
   font-size: 30px;
   margin-bottom: 10px;
   font-family: 'Roboto', sans-serif;
+  color: #382d16;
 }
 
 .login-title {
   font-size: 30px;
   margin-bottom: 10px;
   font-family: 'Roboto', sans-serif;
+  color: #382d16;
 }
 
 .button-div {
@@ -87,6 +113,34 @@ margin: 0 auto;
 
 form input {
   margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  border-radius: 4px;
+}
+
+/* button {
+  background-color: #594724;
+  color: white;
+  padding-bottom: 50px 12px 12px 12px;
+  border-radius: 4px;
+  font-weight: 400;
+  box-shadow: 0 0 15px -6px rgb(34, 33, 33);
+  font-family: 'Roboto', sans-serif;
+} */
+
+button {
+  font-size: .9rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 3px;
+  margin-top: -20px;
+  padding: .5rem 2rem;
+  margin: auto;
+  box-shadow: 0 0 15px -6px rgb(34, 33, 33);
+  background-color: #594724;
+  color: white;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -244,17 +298,6 @@ form input {
   cursor: pointer;
   border: none;
 } */
-
-button {
-  font-size: .9rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 3px;
-  padding: .3rem 1rem;
-  margin: auto;
-  box-shadow: 0 0 15px -6px rgb(34, 33, 33);
-  font-family: 'Roboto', sans-serif;
-}
 
 .button-default {
   background: #247BA0;
