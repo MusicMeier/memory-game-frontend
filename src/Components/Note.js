@@ -24,7 +24,6 @@ const Note = (props) => {
 }, [ matched ])
 
   useEffect(() => {
-    
       if(stack.includes(note)){
         setFlipped(true)
       } else {

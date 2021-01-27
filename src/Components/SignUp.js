@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 class SignUp extends Component {
 
@@ -17,9 +17,9 @@ class SignUp extends Component {
   }
 
   handleSubmit = (event) => {
-    event.preventDefault()
-    this.props.saveUser(this.state)
-
+    event.preventDefault();
+    this.props.saveUser(this.state);
+    
   }
 
   render(){
@@ -34,8 +34,9 @@ class SignUp extends Component {
           <label>Last Name</label>
           <input name="lastName" value={this.state.lastName} onChange={this.handleChange}></input>
           <label>Password</label>
-          <input name="password" value={this.state.password} onChange={this.handleChange}></input>
+          <input type="password" name="password" value={this.state.password} onChange={this.handleChange}></input>
           <input type="submit" value="Sign Up!"></input>
+          <p className='change-page-sentence'>Already have an account? <button onClick={() => this.props.toggleLogin(true)}>Login!</button></p>
         </form>
       </div>
     );

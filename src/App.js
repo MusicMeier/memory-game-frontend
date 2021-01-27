@@ -1,7 +1,8 @@
 import './App.css';
 import HomePage from './Components/HomePage'
-import { Route, Link, Switch, } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import GamePageMemory from './Components/GamePageMemory';
+import Login from './Components/Login'
 import SignUp from './Components/SignUp'
 import {useState} from 'react'
 
@@ -13,8 +14,8 @@ function App() {
         <Switch>
           <Route exact path='/' component={HomePage}>
           </Route>
-          <Route path="/SignUp" render={(routerProps) => {
-            return <SignUp user={user} setUser={setUser} {...routerProps}/> 
+          <Route path="/login" render={(routerProps) => {
+            return <Login user={user} setUser={setUser} {...routerProps}/> 
           }} 
           />
           <Route path="/GamePageMemory" render={(routerProps) => {

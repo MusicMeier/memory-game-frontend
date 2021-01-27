@@ -3,44 +3,78 @@ import { Link, Redirect } from 'react-router-dom'
 import SignUp from './SignUp';
 import Login from './Login';
 
+const baseUrl = "http://localhost:7001/"
+
 class HomePage extends Component {
   state = {
-    user: {}
+    users: {},
+    error: "",
+    showLogin: false
   }
 
-  saveUser = user => {
-    fetch("http://localhost:7001/users", {
+  toggleLogin = (value) => {
+    this.setState({showLogin: value})
+  }
+
+  saveUser = users => {
+    console.log(users)
+    fetch(baseUrl + "users", {
         method: "POST",
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          user: {
-            username: user.username,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            password: user.password
-          }
+            username: users.username,
+            firstName: users.firstName,
+            lastName: users.lastName,
+            password: users.password
         }),
       })
       .then(response => response.json())
-      .then(({user}) => this.setState({user}))
+      .then((users) => {
+        this.setState(users);
+        this.props.history.push('/GamePageMemory');
+      })
+    
+  }
+
+  login = (username, password) => {
+    fetch(baseUrl + "login" , {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json"
+      }, body: JSON.stringify({
+          username,
+          password
+      })
+    })
+    .then(response => response.json())
+    .then(result => {
+      if(result.token){
+        localStorage.setItem('token', result.token)
+        this.setState({
+          users: result.users
+        })
+        this.props.history.push('/GamePageMemory')
+      } else {
+        this.setState({
+          error: result.error
+        })
+      }
+    })
   }
 
 render(){
-  console.log(this.state)
+  // console.log(this.state)
   return (
     <div className="HomePage">
       <div>
-        {this.state.user.username
-          ? <Redirect to="/GamePageMemory" />
-          : (
-            <>
-              <SignUp saveUser={this.saveUser}/>
-              <Login />
-            </>
-          )
+      <h1 className='homepage-title'>Note-Set-Match</h1>
+        {this.state.showLogin
+          ? <Login toggleLogin={this.toggleLogin} login={this.login} error={this.state.error}/>
+          : <SignUp toggleLogin={this.toggleLogin} saveUser={this.saveUser}/>
+          
         }
       </div>
       <div className="button-div">
